@@ -1,0 +1,347 @@
+[gd_scene load_steps=34 format=3 uid="uid://dirk4rcu3aefu"]
+
+[ext_resource type="Texture2D" uid="uid://cc7qe6ae1sgi4" path="res://characters/HANDSONHANDS_Poliigon_WoodFloorAsh_4186_BaseColor.jpg" id="1_nta06"]
+[ext_resource type="Texture2D" uid="uid://bb0ljs5atjull" path="res://scenes/CityStreetAsphaltGenericClean001/CityStreetAsphaltGenericClean001_COL_2K.jpg" id="2_fxesy"]
+[ext_resource type="Texture2D" uid="uid://d3qorqteb5ys3" path="res://characters/HANDSONHANDS_StuccoRoughCast001_ROUGHNESS_2K_METALNESS.png" id="3_ey208"]
+[ext_resource type="Script" uid="uid://d4gav1esyu0tt" path="res://scripts/door.gd" id="4_g721p"]
+[ext_resource type="Script" uid="uid://d2ui63qbgi3nd" path="res://scripts/player.gd" id="6_5epks"]
+[ext_resource type="Script" uid="uid://bhg2sf5psawot" path="res://scenes/camera_3d.gd" id="7_myuds"]
+[ext_resource type="Script" uid="uid://slx5r0li7d3n" path="res://scripts/ray_cast_3d.gd" id="8_ktk4y"]
+[ext_resource type="PackedScene" uid="uid://cewfouc011roq" path="res://characters/moretotpologyjfjfnf.blend" id="9_ew534"]
+[ext_resource type="PackedScene" uid="uid://bfy46g0dxc0i6" path="res://actionable.tscn" id="10_3p4fc"]
+[ext_resource type="Resource" uid="uid://i2riy2k6sjwy" path="res://dialogue/dialogue.dialogue" id="11_b081e"]
+
+[sub_resource type="GDScript" id="GDScript_2m64t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmed7"]
+albedo_texture = ExtResource("1_nta06")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cswix"]
+albedo_texture = ExtResource("2_fxesy")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2m64t"]
+albedo_texture = ExtResource("1_nta06")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ul1bw"]
+albedo_texture = ExtResource("1_nta06")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsvt1"]
+albedo_texture = ExtResource("1_nta06")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bw6s"]
+albedo_texture = ExtResource("3_ey208")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83ys1"]
+albedo_texture = ExtResource("3_ey208")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1q0t"]
+albedo_texture = ExtResource("3_ey208")
+
+[sub_resource type="Animation" id="Animation_tkgqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.1623, -7.68349)]
+}
+
+[sub_resource type="Animation" id="Animation_r2yv6"]
+resource_name = "open"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2.1623, -7.68349), Vector3(5.48856, 2.1623, -7.68349), Vector3(5.48856, 2.1623, -7.68349), Vector3(0, 2.1623, -7.68349)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ye1hr"]
+_data = {
+&"RESET": SubResource("Animation_tkgqs"),
+&"open": SubResource("Animation_r2yv6")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_05nqj"]
+sky_top_color = Color(0.000477437, 0.000714758, 0.00114107, 1)
+sky_horizon_color = Color(0, 0.137461, 0.373686, 1)
+
+[sub_resource type="Sky" id="Sky_7w70c"]
+resource_local_to_scene = true
+sky_material = SubResource("ProceduralSkyMaterial_05nqj")
+
+[sub_resource type="Environment" id="Environment_u7ner"]
+background_mode = 2
+sky = SubResource("Sky_7w70c")
+ambient_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+volumetric_fog_density = 0.0341
+volumetric_fog_ambient_inject = 1.65
+adjustment_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qpkwk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rsvt1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cswix"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0njqv"]
+height = 1.2
+
+[sub_resource type="Animation" id="Animation_cswix"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0njqv"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0698132, -0.00698132, -0.0349066), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u7ner"]
+resource_name = "landing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.2, 0), Vector3(0, -0.3, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.00872665, -0.00872665, -0.00872665), Vector3(-0.00523599, -0.00523599, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0kmv"]
+_data = {
+&"RESET": SubResource("Animation_cswix"),
+&"jump": SubResource("Animation_0njqv"),
+&"landing": SubResource("Animation_u7ner")
+}
+
+[node name="world" type="Node3D"]
+script = SubResource("GDScript_2m64t")
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_mmed7")
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_cswix")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19718, 12.6044)
+material_override = SubResource("StandardMaterial3D_2m64t")
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_cswix")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9727, 0.672331, -8.20629)
+material_override = SubResource("StandardMaterial3D_ul1bw")
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_cswix")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2589, 1.86433, -2.96511)
+material_override = SubResource("StandardMaterial3D_rsvt1")
+use_collision = true
+size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_cswix")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 3.14785, 5.03671, -2.478)
+material_override = SubResource("StandardMaterial3D_0bw6s")
+use_collision = true
+size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_cswix")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.30918, 5.03671, -2.50323)
+material_override = SubResource("StandardMaterial3D_83ys1")
+use_collision = true
+size = Vector3(10, 1, 10)
+material = SubResource("StandardMaterial3D_cswix")
+
+[node name="door" type="CSGBox3D" parent="stage"]
+transform = Transform3D(5.64, 0, 0, 0, 4.14, 0, 0, 0, 0.34, 0, 2.1623, -7.68349)
+material_override = SubResource("StandardMaterial3D_j1q0t")
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_g721p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="stage/door"]
+libraries = {
+&"": SubResource("AnimationLibrary_ye1hr")
+}
+
+[node name="environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="environment"]
+environment = SubResource("Environment_u7ner")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.099
+shadow_enabled = true
+
+[node name="actionable" parent="environment" instance=ExtResource("10_3p4fc")]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0.0497506, -0.625281, -19.1413)
+dialogue_resource = ExtResource("11_b081e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="environment/actionable"]
+transform = Transform3D(13.38, 0, 0, 0, 13.38, 0, 0, 0, 13.38, 0, 9.74149, 0)
+shape = SubResource("SphereShape3D_qpkwk")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="actionable_finder" type="Area3D" parent="environment"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/actionable_finder"]
+transform = Transform3D(3.02, 0, 0, 0, 3.02, 0, 0, 0, 3.02, 0, 2.05727, 0)
+shape = SubResource("SphereShape3D_rsvt1")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="moretotpologyjfjfnf" parent="environment/actionable_finder/CollisionShape3D" instance=ExtResource("9_ew534")]
+transform = Transform3D(0.0562914, 0, 0, 0, 0.0562914, 0, 0, 0, 0.0562914, 0.0164737, -0.888262, -6.33818)
+
+[node name="player" type="CharacterBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("6_5epks")
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_cswix")
+
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622386, 0)
+shape = SubResource("CapsuleShape3D_0njqv")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="player"]
+target_position = Vector3(0, 2, 0)
+
+[node name="nek" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="head" type="Node3D" parent="player/nek"]
+
+[node name="eyes" type="Node3D" parent="player/nek/head"]
+
+[node name="Camera3D" type="Camera3D" parent="player/nek/head/eyes"]
+script = ExtResource("7_myuds")
+
+[node name="vision_cast" type="RayCast3D" parent="player/nek/head/eyes/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.92, 0, 0, 0)
+target_position = Vector3(0, 0, -0.5)
+collision_mask = 2
+script = ExtResource("8_ktk4y")
+
+[node name="prompt" type="Label" parent="player/nek/head/eyes/Camera3D/vision_cast"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -17.0
+offset_right = 57.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.684949, 0.363306, 0.935624, 1)
+theme_override_colors/font_shadow_color = Color(0.281444, 0.126356, 0.5378, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "E - to Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="moretotpologyjfjfnf" parent="player/nek/head/eyes/Camera3D" instance=ExtResource("9_ew534")]
+transform = Transform3D(-0.18, 0, -1.57361e-08, 0, 0.18, 0, 1.57361e-08, 0, -0.18, 0, -2.193, 0.25)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/nek/head/eyes"]
+libraries = {
+&"": SubResource("AnimationLibrary_r0kmv")
+}

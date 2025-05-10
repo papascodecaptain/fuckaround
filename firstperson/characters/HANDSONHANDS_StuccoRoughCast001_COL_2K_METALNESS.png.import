@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://boj6vc6r3qrk2"
+path.s3tc="res://.godot/imported/HANDSONHANDS_StuccoRoughCast001_COL_2K_METALNESS.png-f81418984faaa5ef3a54cd5d6fbbf553.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "999440e2a78d16e97462a439bc4d1ba6"
+}
+
+[deps]
+
+source_file="res://characters/HANDSONHANDS_StuccoRoughCast001_COL_2K_METALNESS.png"
+dest_files=["res://.godot/imported/HANDSONHANDS_StuccoRoughCast001_COL_2K_METALNESS.png-f81418984faaa5ef3a54cd5d6fbbf553.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
